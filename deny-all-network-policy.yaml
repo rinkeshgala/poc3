@@ -1,9 +1,11 @@
-apiVersion: networking.k8s.io/v1
-kind: NetworkPolicy
+apiVersion: v1
+kind: Pod
 metadata:
-  name: default-deny-ingress
-  namespace: default
+  name: worker-app-pod
+  labels:
+    name: worker-app-pod
+    app: demo-voting-pod
 spec:
-  podSelector: {}
-  policyTypes:
-  - Ingress
+  containers:
+    - name: worker-app
+      image: kodekloud/examplevotingapp_worker:v1
