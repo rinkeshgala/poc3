@@ -1,0 +1,15 @@
+---
+kind: Role
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: rbac-developer-role
+  namespace: default
+rules:
+- apiGroups: [""] # "" indicates the core API group
+  resources: ["pods","pods/log"]
+  verbs: ["get", "watch", "list"]
+
+---
+#Referance Links:
+#https://kubernetes.io/docs/reference/access-authn-authz/rbac/
+#https://cloud.google.com/kubernetes-engine/docs/how-to/role-based-access-control
