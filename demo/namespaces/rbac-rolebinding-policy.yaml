@@ -3,7 +3,9 @@ kind: RoleBinding
 apiVersion: rbac.authorization.k8s.io/v1
 metadata:
   name: rbac-developer-role-binding
-  namespace: default
+  annotations:
+    configmanagement.gke.io/namespace-selector: default
+  # namespace: default
 subjects:
 # Google Cloud user account
 - kind: User
