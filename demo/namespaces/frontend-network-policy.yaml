@@ -7,8 +7,8 @@ metadata:
 spec:
   policyTypes:
   - Ingress
-  # podSelector:
-  #   matchLabels:
-  #     name: frontend
+  podSelector:
+    matchLabels:
+      app: frontend
   ingress:
     - {}
