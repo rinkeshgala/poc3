@@ -2,7 +2,7 @@ kind: NamespaceSelector
 apiVersion: configmanagement.gke.io/v1
 metadata:
   name: default
-# spec:
+spec:
 #   selector:
 #     matchLabels:
 #       env: dev
