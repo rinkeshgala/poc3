@@ -3,4 +3,4 @@ kind: Repo
 metadata:
   name: repo
 spec:
-  version: master
+  version: 1.0.0
