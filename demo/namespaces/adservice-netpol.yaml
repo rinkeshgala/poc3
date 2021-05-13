@@ -12,5 +12,5 @@ spec:
     - podSelector:
         matchLabels:
           app: frontend
-    ports:
-      - port: 9555
+    # ports:
+    #   - port: 9555

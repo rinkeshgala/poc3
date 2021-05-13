@@ -12,5 +12,5 @@ spec:
     - podSelector:
         matchLabels:
           app: frontend
-    ports:
-      - port: 8080
+    # ports:
+    #   - port: 8080

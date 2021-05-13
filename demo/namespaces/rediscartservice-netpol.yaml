@@ -12,5 +12,5 @@ spec:
     - podSelector:
         matchLabels:
           app: cartservice
-    ports:
-      - port: 6379
+    # ports:
+    #   - port: 6379

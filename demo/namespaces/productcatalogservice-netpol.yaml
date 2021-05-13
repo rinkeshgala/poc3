@@ -12,8 +12,8 @@ spec:
     - podSelector:
         matchLabels:
           app: frontend
-    ports:
-      - port: 3550
+    # ports:
+    #   - port: 3550
 
 ---
 #Network policy to ALLOW traffic TO productcatalogservice FROM recommendationservice on PORT 3550
@@ -30,8 +30,8 @@ spec:
     - podSelector:
         matchLabels:
           app: recommendationservice
-    ports:
-      - port: 3550
+    # ports:
+    #   - port: 3550
 
 ---
 #Network policy to ALLOW traffic TO productcatalogservice FROM checkoutservice on PORT 3550
@@ -48,5 +48,5 @@ spec:
     - podSelector:
         matchLabels:
           app: checkoutservice
-    ports:
-      - port: 3550
+    # ports:
+    #   - port: 3550

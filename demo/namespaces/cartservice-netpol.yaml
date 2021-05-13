@@ -12,8 +12,8 @@ spec:
     - podSelector:
         matchLabels:
           app: checkoutservice
-    ports:
-      - port: 7070
+    # ports:
+    #   - port: 7070
 
 ---
 #Network policy to ALLOW traffic TO cartservice FROM frontend on PORT 7070
@@ -30,5 +30,5 @@ spec:
     - podSelector:
         matchLabels:
           app: frontend
-    ports:
-      - port: 7070
+    # ports:
+    #   - port: 7070

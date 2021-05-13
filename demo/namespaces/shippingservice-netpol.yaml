@@ -12,8 +12,8 @@ spec:
     - podSelector:
         matchLabels:
           app: frontend
-    ports:
-      - port: 50051
+    # ports:
+    #   - port: 50051
 
 ---
 #Network policy to ALLOW traffic TO shippingservice FROM checkoutservice on PORT 50051
@@ -30,5 +30,5 @@ spec:
     - podSelector:
         matchLabels:
           app: checkoutservice
-    ports:
-      - port: 50051
+    # ports:
+    #   - port: 50051
