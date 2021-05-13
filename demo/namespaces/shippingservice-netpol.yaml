@@ -1,0 +1,34 @@
+#Network policy to ALLOW traffic TO shippingservice FROM frontend on PORT 50051
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: shipping-allow-frontend
+spec:
+  podSelector:
+    matchLabels:
+      app: shippingservice
+  ingress:
+  - from:
+    - podSelector:
+        matchLabels:
+          app: frontend
+    ports:
+      - port: 50051
+
+---
+#Network policy to ALLOW traffic TO shippingservice FROM checkoutservice on PORT 50051
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: shipping-allow-checkoutservice
+spec:
+  podSelector:
+    matchLabels:
+      app: shippingservice
+  ingress:
+  - from:
+    - podSelector:
+        matchLabels:
+          app: checkoutservice
+    ports:
+      - port: 50051

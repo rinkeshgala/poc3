@@ -1,0 +1,34 @@
+#Network policy to ALLOW traffic TO cartservice FROM checkoutservice on PORT 7070
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: cartservice-allow-checkoutservice
+spec:
+  podSelector:
+    matchLabels:
+      app: cartservice
+  ingress:
+  - from:
+    - podSelector:
+        matchLabels:
+          app: checkoutservice
+    ports:
+      - port: 7070
+
+---
+#Network policy to ALLOW traffic TO cartservice FROM frontend on PORT 7070
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: cartservice-allow-frontend
+spec:
+  podSelector:
+    matchLabels:
+      app: cartservice
+  ingress:
+  - from:
+    - podSelector:
+        matchLabels:
+          app: frontend
+    ports:
+      - port: 7070

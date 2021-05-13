@@ -1,0 +1,16 @@
+#Network policy to ALLOW traffic TO adservice FROM frontend on PORT 9555
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: adservice-allow-frontend
+spec:
+  podSelector:
+    matchLabels:
+      app: adservice
+  ingress:
+  - from:
+    - podSelector:
+        matchLabels:
+          app: frontend
+    ports:
+      - port: 9555
