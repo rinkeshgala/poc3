@@ -1,8 +1,0 @@
-kind: NamespaceSelector
-apiVersion: configmanagement.gke.io/v1
-metadata:
-  name: default
-spec:
-  selector:
-    matchLabels:
-      env: anthos-dev
